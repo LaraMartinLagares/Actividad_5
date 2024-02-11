@@ -1,1 +1,27 @@
-<p>blog works!</p>
+<section class="contenidoBlog">
+    <aside class="formulario">
+        <span class="tituloFormulario">- ¿Te gustaría añadir una nueva noticia al blog? -</span>
+        <div class="campoFormulario">
+            <label for="titulo">Título:</label>
+            <input class="input" type="text" placeholder="Introduce un título para la noticia" id="titulo">
+        </div>
+        <div class="campoFormulario">
+            <label for="imagen">Imagen:</label>
+            <input class="input" type="text" placeholder="Introduce URL de imagen para la noticia" id="imagen">
+        </div>
+        <div class="campoFormulario">
+            <label for="cuerpo">Contenido:</label>
+            <textarea class="input input--contenido" type="text" placeholder="Introduce el texto del cuerpo para la noticia" id="cuerpo">
+            </textarea>
+        </div>
+        <div class="campoFormulario">
+            <label for="fecha">Fecha de Publicación:</label>
+            <input class="input" type="date" placeholder="Introduce fecha de publicación de la noticia" id="fecha">
+        </div>
+        <div class="div_btn">
+            <button class="btn">>> Insertar nueva noticia en el blog</button>
+        </div>
+    </aside>
+
+    <div class="listadoNoticias"></div>
+</section>
