@@ -13,7 +13,7 @@ export class BlogComponent {
   arrNoticias : INoticia[]= [
     {
       'titulo':"Modelo ‘sexigenaria’ desfila y posa para hacer “visibles” a las mujeres de más de 50 años",
-      'imagen':"./assets/noticia_3.jpg",
+      'imagen':"./assets/noticia_1.jpg",
       'cuerpo':"Con su larga cabellera plateada, la sexagenaria Caroline Ida Ours desfila y posa para las grandes marcas de lencería francesa para hacer “visibles” a las mujeres de más de 50 años. Su imagen en ropa interior para la última campaña de la marca Darjeeling provocó una avalancha de comentarios, unos entusiastas y otros de odio. Realmente no tengo el físico que podrían pedir las casas de lencería”, dice sonriendo Caroline Ida Ours, de 61 años, que se lanzó en el mundo de los castings hace tres años. Desde entonces, su trayectoria no dejó de mejorar.",
       'fechaPublicacion':"2024/02/08"
     },
@@ -25,4 +25,19 @@ export class BlogComponent {
     }
 
   ];
+
+    cargarNoticia(): string {
+    let html: string = "";
+    this.arrNoticias.forEach((noticia : any) =>{
+ 
+      html+=`<article class="noticia">
+                <h2 class="tituloNoticia">${noticia.titulo}</h2>
+                <img class="imagenNoticia" src="${noticia.imagen}">
+                <div class="textoNoticia">${noticia.cuerpo}</div>
+                <footer class="fechaNoticia">Noticia publicada el  ${noticia.fechaPublicacion}</footer>
+            </article>`;
+    });
+    return html;
+  }
+
 }
