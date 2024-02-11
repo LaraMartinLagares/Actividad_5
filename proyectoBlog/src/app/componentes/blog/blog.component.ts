@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { INoticia } from '../../interfaces/inoticia.interface';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
@@ -26,7 +27,28 @@ export class BlogComponent {
 
   ];
 
-    cargarNoticia(): string {
+  newNoticia : INoticia = {
+    'titulo':"",
+    'imagen':"",
+    'cuerpo':"",
+    'fechaPublicacion':""
+  };
+
+  guardarNoticia(): void {
+    if(this.newNoticia.titulo && this.newNoticia.imagen && this.newNoticia.cuerpo && this.newNoticia.fechaPublicacion !=""){
+      this.arrNoticias.push(this.newNoticia);  
+      this.newNoticia = {  
+        'titulo':"",
+        'imagen':"",
+        'cuerpo':"",
+        'fechaPublicacion':""
+      }
+    }else{
+      alert("Lo sentimos, nos falta información para insertar su noticia en el blog. Por favor, rellene todos los campos.");
+    };
+  }
+
+  cargarNoticia(): string {
     let html: string = "";
     this.arrNoticias.forEach((noticia : any) =>{
  
