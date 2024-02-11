@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { INoticia } from '../../interfaces/inoticia.interface';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
