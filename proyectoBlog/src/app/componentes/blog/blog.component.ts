@@ -26,7 +26,15 @@ export class BlogComponent {
 
   ];
 
-    cargarNoticia(): string {
+  newNoticia : INoticia = {
+    'titulo':"",
+    'imagen':"",
+    'cuerpo':"",
+    'fechaPublicacion':""
+  };
+
+
+  cargarNoticia(): string {
     let html: string = "";
     this.arrNoticias.forEach((noticia : any) =>{
  
