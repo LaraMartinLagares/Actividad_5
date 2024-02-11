@@ -25,4 +25,19 @@ export class BlogComponent {
     }
 
   ];
+
+    cargarNoticia(): string {
+    let html: string = "";
+    this.arrNoticias.forEach((noticia : any) =>{
+ 
+      html+=`<article class="noticia">
+                <h2 class="tituloNoticia">${noticia.titulo}</h2>
+                <img class="imagenNoticia" src="${noticia.imagen}">
+                <div class="textoNoticia">${noticia.cuerpo}</div>
+                <footer class="fechaNoticia">Noticia publicada el  ${noticia.fechaPublicacion}</footer>
+            </article>`;
+    });
+    return html;
+  }
+
 }
