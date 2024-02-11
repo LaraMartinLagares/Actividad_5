@@ -33,6 +33,19 @@ export class BlogComponent {
     'fechaPublicacion':""
   };
 
+  guardarNoticia(): void {
+    if(this.newNoticia.titulo && this.newNoticia.imagen && this.newNoticia.cuerpo && this.newNoticia.fechaPublicacion !=""){
+      this.arrNoticias.push(this.newNoticia);  
+      this.newNoticia = {  
+        'titulo':"",
+        'imagen':"",
+        'cuerpo':"",
+        'fechaPublicacion':""
+      }
+    }else{
+      alert("Lo sentimos, nos falta información para insertar su noticia en el blog. Por favor, rellene todos los campos.");
+    };
+  }
 
   cargarNoticia(): string {
     let html: string = "";
